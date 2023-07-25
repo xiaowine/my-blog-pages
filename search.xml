@@ -1,15 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>6.x使用教程</title>
+    <title>《墨-状态栏歌词》6.x基础配置教程</title>
     <url>/posts/8e64/</url>
-    <content><![CDATA[<div class="note success no-icon flat"><p><a href="https://github.com/Block-Network/StatusBarLyric/releases">稳定版下载地址</a></p>
+    <content><![CDATA[<div class="note success no-icon flat"><p><a href="https://github.com/Block-Network/StatusBarLyric/releases">模块稳定版下载地址</a></p>
 </div>
-<div class="note warning no-icon flat"><p><a href="https://github.com/Block-Network/StatusBarLyric/actions/workflows/Android_Dev.yml">Dev下载地址</a></p>
+<div class="note warning no-icon flat"><p><a href="https://github.com/Block-Network/StatusBarLyric/actions/workflows/Android_Dev.yml">模块Dev下载地址</a></p>
 </div>
 <h3 id="前言">前言</h3>
 <ul>
-<li>6.x相较于之前的版本改动巨大，并且不是激活就可用，需要进行一个简单的配置，下面进行简单教程</li>
+<li>《墨-状态栏歌词》6.x相较于之前的版本改动巨大，并且不是激活就可用，需要进行一个简单的配置，下面进行教程</li>
+</ul>
+<h4 id="基础配置教程">基础配置教程</h4>
+<ul>
+<li>安装<a href="https://github.com/Block-Network/StatusBarLyric/releases">LSPosed框架</a>，并激活本模块</li>
+<li>在LSPosed框架中激活本模块，作用域选择<code>推荐应用</code>即可</li>
+<li>进入本模块，打开主开关，进入Hook页</li>
+<li><code>开启测试模式</code>，重启系统界面（需给本模块Root权限），重启点击获取Hook点</li>
+<li>点击获取Hook点后，进入选择页，会出现一个列表</li>
+<li>每个Hook点都点击尝试下，当状态栏出现<code>模块名字</code>则为可用的Hook点</li>
+<li>选择后返回上页，<code>关闭测试模式</code>，再次重启系统界面</li>
+<li>至此6.x基础配置教程已经结束</li>
+</ul>
+<h4 id="常见问题">常见问题</h4>
+<ul>
+<li>没有显示模块名字的Hook点？
+<ul>
+<li>亲开启<code>放宽过滤</code>，重启系统界面，再次尝试</li>
+<li>请<code>关闭修改状态栏的其他模块</code>，避免相互影响</li>
+</ul>
+</li>
+<li>为什么我选择了Hook点，但是状态栏没有显示歌词？
+<ul>
+<li>请检查是否开启了测试模式，如果开启了测试模式，请关闭测试模式，再次重启系统界面</li>
+<li>请<code>关闭修改状态栏的其他模块</code>，避免相互影响</li>
+</ul>
+</li>
+<li>为什么显示广播接收超时？
+<ul>
+<li>请先重启系统界面，重启后再次点击获取Hook点。</li>
+<li>依然无效请在LSPosed框架中，模块取消勾选系统界面再勾选，重启手机，再次尝试</li>
+<li>若依旧无效，请<code>携带系统界面Apk</code>，<a href="https://github.com/Block-Network/StatusBarLyric/issues/new?assignees=&amp;labels=&amp;projects=&amp;template=bug_report.md&amp;title=%E5%B9%BF%E6%92%AD%E6%8E%A5%E6%94%B6%E8%B6%85%E6%97%B6">反馈问题</a></li>
+</ul>
+</li>
 </ul>
 ]]></content>
       <categories>
@@ -20,11 +53,11 @@
       </tags>
   </entry>
   <entry>
-    <title>&lt;墨-状态栏歌词&gt;6.x更新简介</title>
+    <title>《墨-状态栏歌词》6.x更新简介</title>
     <url>/posts/ffb9/</url>
-    <content><![CDATA[<div class="note success no-icon flat"><p><a href="https://github.com/Block-Network/StatusBarLyric/releases">稳定版下载地址</a></p>
+    <content><![CDATA[<div class="note success no-icon flat"><p><a href="https://github.com/Block-Network/StatusBarLyric/releases">模块稳定版下载地址</a></p>
 </div>
-<div class="note warning no-icon flat"><p><a href="https://github.com/Block-Network/StatusBarLyric/actions/workflows/Android_Dev.yml">Dev下载地址</a></p>
+<div class="note warning no-icon flat"><p><a href="https://github.com/Block-Network/StatusBarLyric/actions/workflows/Android_Dev.yml">模块Dev下载地址</a></p>
 </div>
 <h2 id="《墨-状态栏歌词》全部重构">《墨-状态栏歌词》全部重构</h2>
 <p><img src="https://raw.githubusercontent.com/Block-Network/StatusBarLyric/Dev/icon.png" alt="Icon"></p>

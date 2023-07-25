@@ -205,4 +205,25 @@
         <tag>破解</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Github Action文件下载教程</title>
+    <url>/posts/8873/</url>
+    <content><![CDATA[<h3 id="教程">教程</h3>
+<ul>
+<li>首先需要一个Github账号，没有的需要<a href="https://github.com/join">注册</a>一个（因为下载必须登录）</li>
+<li>登录后前往所需要下载的项目</li>
+<li>点击Header上的Actions，如图：<img class="inline-img" src="/image/action.png" style="height:50px"/></li>
+<li>找到要下载的一次workflows，点击进入</li>
+<li>向下翻会找到一栏名叫Artifacts的东西，下面就是action运行后所编译的东西</li>
+<li>点击要下载的项目名字，就会开始下载</li>
+</ul>
+]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>下载</tag>
+        <tag>测试版</tag>
+      </tags>
+  </entry>
 </search>

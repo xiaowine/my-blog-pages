@@ -3,7 +3,9 @@
   <entry>
     <title>Alist</title>
     <url>/2023/03/13/Alist/</url>
-    <content><![CDATA[<p>我自己搭建的一个网盘，对接了阿里云 123Pan OneDrive<br>存了些视频 软件 系统 图片等杂七杂八的东西<br><a href="https://alist.xiaowine.cc/">点击进入</a></p>
+    <content><![CDATA[<p>我自己搭建的一个网盘，对接了阿里云 123Pan OneDrive<br>
+存了些视频 软件 系统 图片等杂七杂八的东西<br>
+<a href="https://alist.xiaowine.cc/">点击进入</a></p>
 ]]></content>
       <categories>
         <category>分享</category>
@@ -16,16 +18,23 @@
   <entry>
     <title>破解MIUI13之后深色模式只有部分软件能强制反色</title>
     <url>/2023/03/13/MiuiDarkList/</url>
-    <content><![CDATA[<h3 id="历史原因"><a href="#历史原因" class="headerlink" title="历史原因"></a>历史原因</h3><p>MIUI13开始，深色模式的强制反色改为了白名单模式<br>白名单里的大多为热门大厂软件，小众软件以至于无法强制反色，晚上真的是亮瞎眼<br>至于为什么改，看看小米社区环境就知道了</p>
+    <content><![CDATA[<h3 id="历史原因">历史原因</h3>
+<p>MIUI13开始，深色模式的强制反色改为了白名单模式<br>
+白名单里的大多为热门大厂软件，小众软件以至于无法强制反色，晚上真的是亮瞎眼<br>
+至于为什么改，看看小米社区环境就知道了</p>
 <hr>
-<h3 id="破解思路"><a href="#破解思路" class="headerlink" title="破解思路"></a>破解思路</h3><p>既然有白名单，就要有地方存白名单的信息，我们可以从白名单文件下手，添加我们要强制反色的软件<br>从深色这一词(<code>dark</code>)以及为线索，开始搜索文件名<br>在 <code>/system/etc/</code>文件夹下发现了<code>ForceDarkAppSettings.json</code>文件，这就是MIUI13的白名单文件（MIUI14改到了<code>/system_ext/etc/forcedarkconfig/</code>文件夹下）</p>
+<h3 id="破解思路">破解思路</h3>
+<p>既然有白名单，就要有地方存白名单的信息，我们可以从白名单文件下手，添加我们要强制反色的软件<br>
+从深色这一词(<code>dark</code>)以及为线索，开始搜索文件名<br>
+在 <code>/system/etc/</code>文件夹下发现了<code>ForceDarkAppSettings.json</code>文件，这就是MIUI13的白名单文件（MIUI14改到了<code>/system_ext/etc/forcedarkconfig/</code>文件夹下）</p>
 <hr>
-<h3 id="文件结构分析"><a href="#文件结构分析" class="headerlink" title="文件结构分析"></a>文件结构分析</h3><p>我们先看看白名单文件部分内容</p>
+<h3 id="文件结构分析">文件结构分析</h3>
+<p>我们先看看白名单文件部分内容</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[</span><br><span class="line">  &#123;&quot;defaultEnable&quot;: true, &quot;overrideEnableValue&quot;: 0, &quot;packageName&quot;: &quot;com.sina.weibo&quot;, &quot;showInSettings&quot;: true&#125;,</span><br><span class="line">  &#123;&quot;defaultEnable&quot;: true, &quot;overrideEnableValue&quot;: 0, &quot;packageName&quot;: &quot;com.ss.android.article.news&quot;, &quot;showInSettings&quot;: true&#125;,</span><br><span class="line">  &#123;&quot;defaultEnable&quot;: true, &quot;overrideEnableValue&quot;: 0, &quot;packageName&quot;: &quot;com.snda.wifilocating&quot;, &quot;showInSettings&quot;: true&#125;,</span><br><span class="line">]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>白名单文件里是一个<code>Json</code>，由一个大的<code>List</code>包含着一个个<code>Map</code><br><code>List</code>没啥说的<br><code>Map</code>的数据我们拿第一个分析</p>
+<p>白名单文件里是一个<code>Json</code>，由一个大的<code>List</code>包含着一个个<code>Map</code><br>
+<code>List</code>没啥说的<br>
+<code>Map</code>的数据我们拿第一个分析</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;&quot;defaultEnable&quot;: true, &quot;overrideEnableValue&quot;: 0, &quot;packageName&quot;: &quot;com.sina.weibo&quot;, &quot;showInSettings&quot;: true&#125;</span><br></pre></td></tr></table></figure>
-
 <table>
 <thead>
 <tr>
@@ -34,7 +43,8 @@
 <th>数据类型</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>defaultEnable</td>
 <td>是否启用</td>
 <td>布尔值</td>
@@ -54,32 +64,41 @@
 <td>是否在设置显示</td>
 <td>布尔值</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <p>那么如果我要添加一个软件在白名单里面，那么就添加一次<code>Map</code>在<code>List</code>里面</p>
 <p>例如这样：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[</span><br><span class="line">  &#123;&quot;defaultEnable&quot;: true, &quot;overrideEnableValue&quot;: 0, &quot;packageName&quot;: &quot;Com.bilibili.app.blue&quot;, &quot;showInSettings&quot;: true&#125;,</span><br><span class="line">  &#123;&quot;defaultEnable&quot;: true, &quot;overrideEnableValue&quot;: 0, &quot;packageName&quot;: &quot;tv.danmaku.bili&quot;, &quot;showInSettings&quot;: false&#125;,</span><br><span class="line">  &#123;&quot;defaultEnable&quot;: true, &quot;overrideEnableValue&quot;: 0, &quot;packageName&quot;: &quot;com.sina.weibo&quot;, &quot;showInSettings&quot;: true&#125;,</span><br><span class="line">  &#123;&quot;defaultEnable&quot;: true, &quot;overrideEnableValue&quot;: 0, &quot;packageName&quot;: &quot;com.ss.android.article.news&quot;, &quot;showInSettings&quot;: true&#125;,</span><br><span class="line">  &#123;&quot;defaultEnable&quot;: true, &quot;overrideEnableValue&quot;: 0, &quot;packageName&quot;: &quot;com.snda.wifilocating&quot;, &quot;showInSettings&quot;: true&#125;,</span><br><span class="line">]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>哔哩哔哩概念版 强制反色，并且在设置显示</li>
 <li>哔哩哔哩 强制反色，但是并不在设置显示</li>
 </ul>
 <hr>
-<h3 id="保存修改"><a href="#保存修改" class="headerlink" title="保存修改"></a>保存修改</h3><p>目前据大部分新手机都是<code>EROFS</code>文件系统，旧手机是<code>EXT4</code>文件系统<br><code>EROFS</code>就算有ROOT权限都不能修改系统，<code>EXT4</code>有ROOT权限就能修改<br>所以当你修改后保存，且给予了修改软件ROOT时，无法保存，那么你就是<code>EROFS</code>文件系统<br>最简单的解决方法就是制作Magisk模块挂载修改过的文件，以达到修改目的白名单文件的目的</p>
+<h3 id="保存修改">保存修改</h3>
+<p>目前据大部分新手机都是<code>EROFS</code>文件系统，旧手机是<code>EXT4</code>文件系统<br>
+<code>EROFS</code>就算有ROOT权限都不能修改系统，<code>EXT4</code>有ROOT权限就能修改<br>
+所以当你修改后保存，且给予了修改软件ROOT时，无法保存，那么你就是<code>EROFS</code>文件系统<br>
+最简单的解决方法就是制作Magisk模块挂载修改过的文件，以达到修改目的白名单文件的目的</p>
 <hr>
-<h3 id="对比"><a href="#对比" class="headerlink" title="对比"></a>对比</h3><table>
+<h3 id="对比">对比</h3>
+<table>
 <thead>
 <tr>
 <th>修改前</th>
 <th>修改后</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td><img src="https://i.postimg.cc/PxZYr4hj/Screenshot-2023-03-13-21-11-08-311-com-android-se.jpg" alt="Screenshot-2023-03-13-21-11-08-311-com-android-se.jpg"></td>
 <td><img src="https://i.postimg.cc/tgtQF09v/1678713387793.jpg" alt="Screenshot-2023-03-13-21-11-08-311-com-android-se.jpg"></td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <hr>
-<h3 id="懒人修改法"><a href="#懒人修改法" class="headerlink" title="懒人修改法"></a>懒人修改法</h3><p>软件 <em>爱玩机工具箱</em> 有一键添加所有软件到白名单，并且制作Magisk模块刷入，懒人福音<br><a href="https://www.coolapk.com/apk/com.byyoung.setting">下载链接</a></p>
+<h3 id="懒人修改法">懒人修改法</h3>
+<p>软件 <em>爱玩机工具箱</em> 有一键添加所有软件到白名单，并且制作Magisk模块刷入，懒人福音<br>
+<a href="https://www.coolapk.com/apk/com.byyoung.setting">下载链接</a></p>
 ]]></content>
       <categories>
         <category>玩机</category>

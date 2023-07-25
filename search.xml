@@ -101,12 +101,56 @@
 <a href="https://www.coolapk.com/apk/com.byyoung.setting">下载链接</a></p>
 ]]></content>
       <categories>
-        <category>玩机</category>
+        <category>教程</category>
       </categories>
       <tags>
         <tag>搞机</tag>
         <tag>MIUI</tag>
         <tag>破解</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>&lt;墨-状态栏歌词&gt;6.x更新简介</title>
+    <url>/2023/07/25/%E6%9B%B4%E6%96%B0%E6%80%BB%E6%8F%8F%E8%BF%B0/</url>
+    <content><![CDATA[<div class="note success no-icon flat"><p><a href="https://github.com/Block-Network/StatusBarLyric/releases">稳定版下载地址</a></p>
+</div>
+<div class="note warning no-icon flat"><p><a href="https://github.com/Block-Network/StatusBarLyric/actions/workflows/Android_Dev.yml">Dev下载地址</a></p>
+</div>
+<h2 id="《墨-状态栏歌词》全部重构">《墨-状态栏歌词》全部重构</h2>
+<p><img src="https://raw.githubusercontent.com/Block-Network/StatusBarLyric/Dev/icon.png" alt="Icon"></p>
+<p>经过一段时间的重写，《墨-状态栏歌词》已经全部重构，现在的版本相比以前的版本，更加的省电，性能占用更加的少，系统通用性更高，几乎适配所有系统</p>
+<h3 id="Hook点原理改变">Hook点原理改变</h3>
+<ul>
+<li><code>6.x之前</code>的版本所有Hook点都是固定的，也就是说，不同系统，不同Android版本可能都需要单独适配，特别是国内定制化系统</li>
+<li><code>6.x之后</code>寻找所有TextView（也就是显示文字的控件），再判断它的文字是否为当前时间，如果是，则有可能为状态栏的时间控件，记录下来，之后让用户选择一个能正常显示的，因为机器已经判断不出来了</li>
+<li>
+<mark class="hl-label green">优点</mark> ：适配99.9%的系统，并且适配部分官改
+</li>
+<li>
+<mark class="hl-label red">缺点</mark> ：部分系统会出现玄学问题，比如在浅色与深色模式切换后失效，导致无法显示，这个问题目前还没有解决方案
+</li>
+</ul>
+<h3 id="性能提升">性能提升</h3>
+<ul>
+<li><code>6.x之前</code>的的版本有大部分循环进行判断的代码，这种方式每秒要执行几次到几十次，资源占用较大</li>
+<li><code>6.x之后</code>所有方法改为触发式，系统执行对应方法时才会触发这部分代码，大大减少了资源占用</li>
+</ul>
+<h3 id="更加实用的功能功能">更加实用的功能功能</h3>
+<ul>
+<li><code>6.x之后</code>
+<ul>
+<li>完善了 点击状态栏隐藏歌词</li>
+<li>添加了 动态歌词速度（Beta）</li>
+<li>More…</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>闲话</category>
+      </categories>
+      <tags>
+        <tag>墨-状态栏歌词</tag>
       </tags>
   </entry>
 </search>

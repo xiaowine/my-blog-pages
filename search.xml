@@ -3,15 +3,15 @@
   <entry>
     <title>《墨-状态栏歌词》6.x基础配置教程</title>
     <url>/posts/8e64/</url>
-    <content><![CDATA[<div class="note success no-icon flat"><p><a href="https://github.com/Block-Network/StatusBarLyric/releases">模块稳定版下载地址</a></p>
+    <content><![CDATA[<div class="note success no-icon flat"><p><a href="https://github.com/Block-Network/StatusBarLyric/releases">《墨-状态栏歌词》稳定版下载地址</a></p>
 </div>
-<div class="note warning no-icon flat"><p><a href="https://github.com/Block-Network/StatusBarLyric/actions/workflows/Android_Dev.yml">模块Dev下载地址</a></p>
+<div class="note warning no-icon flat"><p><a href="https://github.com/Block-Network/StatusBarLyric/actions/workflows/Android_Dev.yml">《墨-状态栏歌词》Dev下载地址</a></p>
 </div>
-<h3 id="前言">前言</h3>
+<h3 id="前言"><a class="headerlink" href="#前言"></a>前言</h3>
 <ul>
 <li>《墨-状态栏歌词》6.x相较于之前的版本改动巨大，并且不是激活就可用，需要进行一个简单的配置，下面进行教程</li>
 </ul>
-<h4 id="基础配置教程">基础配置教程</h4>
+<h4 id="基础配置教程"><a class="headerlink" href="#基础配置教程"></a>基础配置教程</h4>
 <ul>
 <li>安装<a href="https://github.com/Block-Network/StatusBarLyric/releases">LSPosed框架</a>，并激活本模块</li>
 <li>在LSPosed框架中激活本模块，作用域选择<code>推荐应用</code>即可</li>
@@ -22,7 +22,7 @@
 <li>选择后返回上页，<code>关闭测试模式</code>，再次重启系统界面</li>
 <li>至此6.x基础配置教程已经结束</li>
 </ul>
-<h4 id="常见问题">常见问题</h4>
+<h4 id="常见问题"><a class="headerlink" href="#常见问题"></a>常见问题</h4>
 <ul>
 <li>没有显示模块名字的Hook点？
 <ul>
@@ -50,19 +50,20 @@
       </categories>
       <tags>
         <tag>墨-状态栏歌词</tag>
+        <tag>Android</tag>
       </tags>
   </entry>
   <entry>
     <title>《墨-状态栏歌词》6.x更新简介</title>
     <url>/posts/ffb9/</url>
-    <content><![CDATA[<div class="note success no-icon flat"><p><a href="https://github.com/Block-Network/StatusBarLyric/releases">模块稳定版下载地址</a></p>
+    <content><![CDATA[<div class="note success no-icon flat"><p><a href="https://github.com/Block-Network/StatusBarLyric/releases">《墨-状态栏歌词》稳定版下载地址</a></p>
 </div>
-<div class="note warning no-icon flat"><p><a href="https://github.com/Block-Network/StatusBarLyric/actions/workflows/Android_Dev.yml">模块Dev下载地址</a></p>
+<div class="note warning no-icon flat"><p><a href="https://github.com/Block-Network/StatusBarLyric/actions/workflows/Android_Dev.yml">《墨-状态栏歌词》Dev下载地址</a></p>
 </div>
-<h2 id="《墨-状态栏歌词》全部重构">《墨-状态栏歌词》全部重构</h2>
+<h2 id="《墨-状态栏歌词》全部重构"><a class="headerlink" href="#《墨-状态栏歌词》全部重构"></a>《墨-状态栏歌词》全部重构</h2>
 <p><img src="https://raw.githubusercontent.com/Block-Network/StatusBarLyric/Dev/icon.png" alt="Icon"></p>
 <p>经过一段时间的重写，《墨-状态栏歌词》已经全部重构，现在的版本相比以前的版本，更加的省电，性能占用更加的少，系统通用性更高，几乎适配所有系统</p>
-<h3 id="Hook点原理改变">Hook点原理改变</h3>
+<h3 id="Hook点原理改变"><a class="headerlink" href="#Hook点原理改变"></a>Hook点原理改变</h3>
 <ul>
 <li><code>6.x之前</code>的版本所有Hook点都是固定的，也就是说，不同系统，不同Android版本可能都需要单独适配，特别是国内定制化系统</li>
 <li><code>6.x之后</code>寻找所有TextView（也就是显示文字的控件），再判断它的文字是否为当前时间，如果是，则有可能为状态栏的时间控件，记录下来，之后让用户选择一个能正常显示的，因为机器已经判断不出来了</li>
@@ -73,12 +74,12 @@
 <mark class="hl-label red">缺点</mark> ：部分系统会出现玄学问题，比如在浅色与深色模式切换后失效，导致无法显示，这个问题目前还没有解决方案
 </li>
 </ul>
-<h3 id="性能提升">性能提升</h3>
+<h3 id="性能提升"><a class="headerlink" href="#性能提升"></a>性能提升</h3>
 <ul>
 <li><code>6.x之前</code>的的版本有大部分循环进行判断的代码，这种方式每秒要执行几次到几十次，资源占用较大</li>
 <li><code>6.x之后</code>所有方法改为触发式，系统执行对应方法时才会触发这部分代码，大大减少了资源占用</li>
 </ul>
-<h3 id="更加实用的功能功能">更加实用的功能功能</h3>
+<h3 id="更加实用的功能功能"><a class="headerlink" href="#更加实用的功能功能"></a>更加实用的功能功能</h3>
 <ul>
 <li><code>6.x之后</code>
 <ul>
@@ -89,11 +90,9 @@
 </li>
 </ul>
 ]]></content>
-      <categories>
-        <category>闲话</category>
-      </categories>
       <tags>
         <tag>墨-状态栏歌词</tag>
+        <tag>Android</tag>
       </tags>
   </entry>
   <entry>
@@ -114,17 +113,17 @@
   <entry>
     <title>破解MIUI13之后深色模式只有部分软件能强制反色</title>
     <url>/posts/7017/</url>
-    <content><![CDATA[<h3 id="历史原因">历史原因</h3>
+    <content><![CDATA[<h3 id="历史原因"><a class="headerlink" href="#历史原因"></a>历史原因</h3>
 <p>MIUI13开始，深色模式的强制反色改为了白名单模式<br>
 白名单里的大多为热门大厂软件，小众软件以至于无法强制反色，晚上真的是亮瞎眼<br>
 至于为什么改，看看小米社区环境就知道了</p>
 <hr>
-<h3 id="破解思路">破解思路</h3>
+<h3 id="破解思路"><a class="headerlink" href="#破解思路"></a>破解思路</h3>
 <p>既然有白名单，就要有地方存白名单的信息，我们可以从白名单文件下手，添加我们要强制反色的软件<br>
 从深色这一词(<code>dark</code>)以及为线索，开始搜索文件名<br>
 在 <code>/system/etc/</code>文件夹下发现了<code>ForceDarkAppSettings.json</code>文件，这就是MIUI13的白名单文件（MIUI14改到了<code>/system_ext/etc/forcedarkconfig/</code>文件夹下）</p>
 <hr>
-<h3 id="文件结构分析">文件结构分析</h3>
+<h3 id="文件结构分析"><a class="headerlink" href="#文件结构分析"></a>文件结构分析</h3>
 <p>我们先看看白名单文件部分内容</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[</span><br><span class="line">  &#123;&quot;defaultEnable&quot;: true, &quot;overrideEnableValue&quot;: 0, &quot;packageName&quot;: &quot;com.sina.weibo&quot;, &quot;showInSettings&quot;: true&#125;,</span><br><span class="line">  &#123;&quot;defaultEnable&quot;: true, &quot;overrideEnableValue&quot;: 0, &quot;packageName&quot;: &quot;com.ss.android.article.news&quot;, &quot;showInSettings&quot;: true&#125;,</span><br><span class="line">  &#123;&quot;defaultEnable&quot;: true, &quot;overrideEnableValue&quot;: 0, &quot;packageName&quot;: &quot;com.snda.wifilocating&quot;, &quot;showInSettings&quot;: true&#125;,</span><br><span class="line">]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p>白名单文件里是一个<code>Json</code>，由一个大的<code>List</code>包含着一个个<code>Map</code><br>
@@ -170,13 +169,13 @@
 <li>哔哩哔哩 强制反色，但是并不在设置显示</li>
 </ul>
 <hr>
-<h3 id="保存修改">保存修改</h3>
+<h3 id="保存修改"><a class="headerlink" href="#保存修改"></a>保存修改</h3>
 <p>目前据大部分新手机都是<code>EROFS</code>文件系统，旧手机是<code>EXT4</code>文件系统<br>
 <code>EROFS</code>就算有ROOT权限都不能修改系统，<code>EXT4</code>有ROOT权限就能修改<br>
 所以当你修改后保存，且给予了修改软件ROOT时，无法保存，那么你就是<code>EROFS</code>文件系统<br>
 最简单的解决方法就是制作Magisk模块挂载修改过的文件，以达到修改目的白名单文件的目的</p>
 <hr>
-<h3 id="对比">对比</h3>
+<h3 id="对比"><a class="headerlink" href="#对比"></a>对比</h3>
 <table>
 <thead>
 <tr>
@@ -192,7 +191,7 @@
 </tbody>
 </table>
 <hr>
-<h3 id="懒人修改法">懒人修改法</h3>
+<h3 id="懒人修改法"><a class="headerlink" href="#懒人修改法"></a>懒人修改法</h3>
 <p>软件 <em>爱玩机工具箱</em> 有一键添加所有软件到白名单，并且制作Magisk模块刷入，懒人福音<br>
 <a href="https://www.coolapk.com/apk/com.byyoung.setting">下载链接</a></p>
 ]]></content>
@@ -200,6 +199,7 @@
         <category>教程</category>
       </categories>
       <tags>
+        <tag>Android</tag>
         <tag>搞机</tag>
         <tag>MIUI</tag>
         <tag>破解</tag>
@@ -208,11 +208,11 @@
   <entry>
     <title>Github Actions文件下载教程</title>
     <url>/posts/8873/</url>
-    <content><![CDATA[<h3 id="前言">前言</h3>
+    <content><![CDATA[<h3 id="前言"><a class="headerlink" href="#前言"></a>前言</h3>
 <ul>
 <li>有的软件，稳定版有bug，或者其他什么原因，需要使用测试版，需要去Github Actions下载测试版</li>
 </ul>
-<h4 id="教程">教程</h4>
+<h4 id="教程"><a class="headerlink" href="#教程"></a>教程</h4>
 <ul>
 <li>首先需要一个Github账号，没有的需要<a href="https://github.com/join">注册</a>一个（因为下载必须登录）</li>
 <li>登录后前往所需要下载的项目</li>

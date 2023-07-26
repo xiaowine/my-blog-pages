@@ -230,4 +230,34 @@
         <tag>测试版</tag>
       </tags>
   </entry>
+  <entry>
+    <title>模块发行版本区别</title>
+    <url>/posts/31389/</url>
+    <content><![CDATA[<div class="note success no-icon flat"><p><a href="https://github.com/Block-Network/StatusBarLyric/releases">《墨-状态栏歌词》稳定版下载地址</a></p>
+</div>
+<div class="note warning no-icon flat"><p><a href="https://github.com/Block-Network/StatusBarLyric/actions/workflows/Android_Dev.yml">《墨-状态栏歌词》Dev下载地址</a></p>
+</div>
+<div class="note success no-icon flat"><p><a href="https://github.com/xiaowine/Lyric-Getter/releases">《Lyric Getter》稳定版下载地址</a></p>
+</div>
+<div class="note warning no-icon flat"><p><a href="https://github.com/xiaowine/Lyric-Getter/actions/workflows/android.yml">《Lyric Getter》Dev下载地址</a></p>
+</div>
+<hr>
+<h4 id="说明"><a class="headerlink" href="#说明"></a>说明</h4>
+<ul>
+<li>《墨-状态栏歌词》与《Lyric Getter》稳定版目前都会有两个文件，一个是<code>Release</code>，一个是<code>Debug</code></li>
+<li>这两个发行版本区别在于
+<ul>
+<li><code>Release</code>混淆代码，不输出Log，适合日常用</li>
+<li><code>Debug</code>不混淆代码，输出Log，适合测试的时候使用</li>
+<li>混淆会大幅度减小apk体积，但是会导致代码不易读，难以找到报错的位置</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>墨-状态栏歌词</tag>
+        <tag>Android</tag>
+        <tag>Lyric Getter</tag>
+      </tags>
+  </entry>
 </search>

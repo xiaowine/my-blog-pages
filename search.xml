@@ -163,6 +163,27 @@
       </tags>
   </entry>
   <entry>
+    <title>LyricGetter下载方式</title>
+    <url>/posts/55202/</url>
+    <content><![CDATA[<div class="note primary no-icon flat"><p>Telegram中稳定版和测试版都在发布，请自行判断</p>
+</div>
+<h3 id="稳定版"><a class="headerlink" href="#稳定版"></a>稳定版</h3>
+<h4 id="GitHub-Release"><a class="headerlink" href="#GitHub-Release"></a><a href="https://github.com/xiaowine/Lyric-Getter/releases">GitHub Release</a></h4>
+<h4 id="Telegram"><a class="headerlink" href="#Telegram"></a><a href="https://t.me/LyricGetter">Telegram</a></h4>
+<h3 id="稳定版-2"><a class="headerlink" href="#稳定版-2"></a>稳定版</h3>
+<h4 id="GitHub-Action"><a class="headerlink" href="#GitHub-Action"></a><a href="https://github.com/xiaowine/Lyric-Getter/actions">GitHub Action</a></h4>
+<h4 id="Telegram-2"><a class="headerlink" href="#Telegram-2"></a><a href="https://t.me/LyricGetter">Telegram</a></h4>
+]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>Android</tag>
+        <tag>Xposed模块</tag>
+        <tag>LyricGetter</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>关闭MIUI USB安装软件提示</title>
     <url>/posts/12063/</url>
     <content><![CDATA[<h3 id="原因"><a class="headerlink" href="#原因"></a>原因</h3>

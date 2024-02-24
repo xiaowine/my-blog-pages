@@ -163,6 +163,32 @@
       </tags>
   </entry>
   <entry>
+    <title>HyperOS-关闭USB安装提示.md</title>
+    <url>/posts/45877/</url>
+    <content><![CDATA[<div class="note primary no-icon flat"><p>此教程适合后期HyperOS，早期HyperOS和MIUI的关闭USB安装提示请参考<a href="/posts/12063/">此教程</a></p>
+</div>
+<hr>
+<h3 id="关闭步骤"><a class="headerlink" href="#关闭步骤"></a>关闭步骤</h3>
+<ul>
+<li>以1.0.21.1.22DEV为例</li>
+<li>打开设置</li>
+<li>进入<code>开发者选项</code>(未开启的话，先打开开发者选项。此类教程网上很多，不再赘述)</li>
+<li>往下划一点，找到<code>USB安装管理</code>，进入他</li>
+<li>进入<code>USB安装管理</code>，会发现右上角有个图标</li>
+<li>点击图标，关闭<code>USB安装管理</code>即可</li>
+</ul>
+]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>Android</tag>
+        <tag>搞机</tag>
+        <tag>HyperOS</tag>
+        <tag>破解</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>LyricGetter下载方式</title>
     <url>/posts/55202/</url>
     <content><![CDATA[<div class="note primary no-icon flat"><p>Telegram中稳定版和测试版都在发布，请自行判断</p>
@@ -212,8 +238,8 @@
       <tags>
         <tag>Android</tag>
         <tag>搞机</tag>
-        <tag>MIUI</tag>
         <tag>破解</tag>
+        <tag>MIUI</tag>
       </tags>
   </entry>
   <entry>
@@ -307,8 +333,8 @@
       <tags>
         <tag>Android</tag>
         <tag>搞机</tag>
-        <tag>MIUI</tag>
         <tag>破解</tag>
+        <tag>MIUI</tag>
       </tags>
   </entry>
   <entry>

@@ -389,4 +389,35 @@
         <tag>Lyric Getter</tag>
       </tags>
   </entry>
+  <entry>
+    <title>解决AutoCAD2014在Win10以上系统崩溃</title>
+    <url>/posts/30263/</url>
+    <content><![CDATA[<h2 id="问题描述"><a class="headerlink" href="#问题描述"></a>问题描述</h2>
+<p>在部分学校中，老师教学用的AutoCAD版本为2014，但是在Win10以上系统中打开后，会在启动界面崩溃，无法正常使用<br>
+<a href="http://xn--Win10-9h1h4k8u7bz4cj0sy3fo6ahz2aa212qgtcwt6ezu9cxt6a3lhf9ak03m.NET">就其原因是因为由于Win10以上系统升级安装了.NET</a> Framework 4.7或更高版本与AutoCAD2014不兼容</p>
+<h2 id="解决方法"><a class="headerlink" href="#解决方法"></a>解决方法</h2>
+<p>在AutoCAD2014配置文件中添加一行内容即可解决</p>
+<ul>
+<li>找到AutoCAD2014安装目录下的acad.exe.config文件</li>
+<li>右键点击文件，选择用记事本打开</li>
+<li>在<startup>标签下添加一行代码</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">AppContextSwitchOverrides</span> <span class="attr">value</span>=<span class="string">&quot;Switch.System.Windows.Input.Stylus.DisableStylusAndTouchSupport=true&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>保存文件，重新启动AutoCAD2014即可正常使用</li>
+</ul>
+<div class="note primary no-icon flat"><p>注意！！！<br>
+系统可能会阻止你修改此文件，只需要将文件复制到桌面，修改后再复制回原文件夹即可</p>
+</div>
+<p>参考样式如下</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">startup</span> <span class="attr">useLegacyV2RuntimeActivationPolicy</span>=<span class="string">&quot;true&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">supportedRuntime</span> <span class="attr">version</span>=<span class="string">&quot;v4.0&quot;</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">startup</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--All assemblies in AutoCAD are fully trusted so there&#x27;s no point generating publisher evidence--&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">runtime</span>&gt;</span>        </span><br><span class="line">   	<span class="tag">&lt;<span class="name">AppContextSwitchOverrides</span> <span class="attr">value</span>=<span class="string">&quot;Switch.System.Windows.Input.Stylus.DisableStylusAndTouchSupport=true&quot;</span>/&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">generatePublisherEvidence</span> <span class="attr">enabled</span>=<span class="string">&quot;false&quot;</span>/&gt;</span>    </span><br><span class="line">   <span class="tag">&lt;/<span class="name">runtime</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>AutoCAD2014</tag>
+        <tag>Windows10</tag>
+        <tag>Windows11</tag>
+      </tags>
+  </entry>
 </search>

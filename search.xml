@@ -405,11 +405,11 @@
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">AppContextSwitchOverrides</span> <span class="attr">value</span>=<span class="string">&quot;Switch.System.Windows.Input.Stylus.DisableStylusAndTouchSupport=true&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>保存文件，重新启动AutoCAD2014即可正常使用</li>
+<li></li>
 </ul>
-<div class="note primary no-icon flat"><p>注意！！！<br>
-系统可能会阻止你修改此文件，只需要将文件复制到桌面，修改后再复制回原文件夹即可</p>
-</div>
-<p>参考样式如下</p>
+<h2 id="注意事项"><a class="headerlink" href="#注意事项"></a>注意事项</h2>
+<p>系统可能会阻止你修改此文件，只需要将文件复制到桌面，修改后再复制回原文件夹即可</p>
+<h2 id="参考样式如下"><a class="headerlink" href="#参考样式如下"></a>参考样式如下</h2>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">startup</span> <span class="attr">useLegacyV2RuntimeActivationPolicy</span>=<span class="string">&quot;true&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">supportedRuntime</span> <span class="attr">version</span>=<span class="string">&quot;v4.0&quot;</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">startup</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--All assemblies in AutoCAD are fully trusted so there&#x27;s no point generating publisher evidence--&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">runtime</span>&gt;</span>        </span><br><span class="line">   	<span class="tag">&lt;<span class="name">AppContextSwitchOverrides</span> <span class="attr">value</span>=<span class="string">&quot;Switch.System.Windows.Input.Stylus.DisableStylusAndTouchSupport=true&quot;</span>/&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">generatePublisherEvidence</span> <span class="attr">enabled</span>=<span class="string">&quot;false&quot;</span>/&gt;</span>    </span><br><span class="line">   <span class="tag">&lt;/<span class="name">runtime</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>教程</category>

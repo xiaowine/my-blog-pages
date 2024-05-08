@@ -1,1 +1,35 @@
-const rAF=window.requestAnimationFrame||window.webkitRequestAnimationFrame||function(e){window.setTimeout(e,1e3/60)};let frame=0,allFrameCount=0,lastTime=Date.now(),lastFameTime=Date.now();const fpsElement=document.getElementById("fps"),loop=()=>{var e,t=Date.now();lastFameTime;lastFameTime=t,allFrameCount++,frame++,t>1e3+lastTime&&(e=Math.round(1e3*frame/(t-lastTime)),fpsElement.textContent="FPS:"+e,frame=0,lastTime=t),rAF(loop)};loop();
+const rAF = (() => {
+    return (
+        window.requestAnimationFrame ||
+        window.webkitRequestAnimationFrame ||
+        function (callback) {
+            window.setTimeout(callback, 1000 / 60);
+        }
+    );
+})();
+
+let frame = 0;
+let allFrameCount = 0;
+let lastTime = Date.now();
+let lastFameTime = Date.now();
+
+const fpsElement = document.getElementById("fps");
+
+const loop = () => {
+    const now = Date.now();
+    const fs = now - lastFameTime;
+    lastFameTime = now;
+    allFrameCount++;
+    frame++;
+
+    if (now > 1000 + lastTime) {
+        const fps = Math.round((frame * 1000) / (now - lastTime));
+        fpsElement.textContent = `FPS:${fps}`;
+        frame = 0;
+        lastTime = now;
+    }
+
+    rAF(loop);
+};
+
+loop();

@@ -195,10 +195,10 @@
 </div>
 <h3 id="稳定版"><a class="headerlink" href="#稳定版"></a>稳定版</h3>
 <h4 id="GitHub-Release"><a class="headerlink" href="#GitHub-Release"></a><a href="https://github.com/xiaowine/Lyric-Getter/releases">GitHub Release</a></h4>
-<h4 id="Telegram"><a class="headerlink" href="#Telegram"></a><a href="https://t.me/LyricGetter">Telegram</a></h4>
+<p><s><a href="https://t.me/LyricGetter">Telegram</a></s></p>
 <h3 id="稳定版-2"><a class="headerlink" href="#稳定版-2"></a>稳定版</h3>
 <h4 id="GitHub-Action"><a class="headerlink" href="#GitHub-Action"></a><a href="https://github.com/xiaowine/Lyric-Getter/actions">GitHub Action</a></h4>
-<h4 id="Telegram-2"><a class="headerlink" href="#Telegram-2"></a><a href="https://t.me/LyricGetter">Telegram</a></h4>
+<p><s><a href="https://t.me/LyricGetter">Telegram</a></s></p>
 ]]></content>
       <categories>
         <category>教程</category>
@@ -387,6 +387,48 @@
         <tag>墨-状态栏歌词</tag>
         <tag>Android</tag>
         <tag>Lyric Getter</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>墨-息使用教程</title>
+    <url>/posts/34549/</url>
+    <content><![CDATA[<hr>
+<div class="note success no-icon flat"><p><a href="https://github.com/Xposed-Modules-Repo/cn.aodlyric.xiaowine/releases">《墨-息》下载地址</a><br>
+<a href="/posts/55202/">《Lyric Getter》下载地址</a></p>
+</div>
+<hr>
+<h4 id="基础配置教程"><a class="headerlink" href="#基础配置教程"></a>基础配置教程</h4>
+<ul>
+<li>安装<a href="https://github.com/Block-Network/StatusBarLyric/releases">LSPosed框架</a>，并激活本模块</li>
+<li>在LSPosed框架中激活本模块，作用域选择<code>推荐应用</code>即可</li>
+<li>进入本模块，打开<code>主开关</code>，并打开对应需要开启的功能</li>
+<li>返回主界面，点击右下角<code>重启</code></li>
+<li>至此基础配置教程已经结束</li>
+</ul>
+<h4 id="常见问题"><a class="headerlink" href="#常见问题"></a>常见问题</h4>
+<h5 id="一言等除了歌词的功能都正常？"><a class="headerlink" href="#一言等除了歌词的功能都正常？"></a>一言等除了歌词的功能都正常？</h5>
+<ul>
+<li>歌词由Lyric Getter提供，需要安装<a href="/posts/55202/">Lyric Getter</a>模块</li>
+<li>请确保Lyric Getter模块已经激活，并且音乐软件打开了对应开关</li>
+</ul>
+<h5 id="模块必须要高级版才能使用吗？"><a class="headerlink" href="#模块必须要高级版才能使用吗？"></a>模块必须要高级版才能使用吗？</h5>
+<ul>
+<li>不是，高级版只是提供了部分功能的个性化，基础版也可以正常使用基础功能</li>
+<li>高级版相当于对作者的支持，作者会提供更多的功能</li>
+</ul>
+<h5 id="为什么电池信息不更新？"><a class="headerlink" href="#为什么电池信息不更新？"></a>为什么电池信息不更新？</h5>
+<ul>
+<li>电池信息由系统广播提供，广播时才会更新</li>
+<li>没有更新说明系统并没有进行广播</li>
+</ul>
+]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>Android</tag>
+        <tag>Xposed模块</tag>
+        <tag>墨-息</tag>
       </tags>
   </entry>
   <entry>

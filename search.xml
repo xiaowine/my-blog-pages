@@ -163,6 +163,115 @@
       </tags>
   </entry>
   <entry>
+    <title>使用CLion现代化IDE开发STM32</title>
+    <url>/posts/11477/</url>
+    <content><![CDATA[<h1 id="教程说明"><a class="headerlink" href="#教程说明"></a>教程说明</h1>
+<ul>
+<li>本教程只为环境搭建做大致说明，各个软件具体使用不做详细说明，如有疑问请自行搜索。</li>
+<li>同时本教程需要一定的基础，如有不懂请自行学习。</li>
+</ul>
+<h1 id="CLion-简介"><a class="headerlink" href="#CLion-简介"></a>CLion 简介</h1>
+<p>CLion 是 JetBrains 开发的一款跨平台集成开发环境 (IDE)，专门用于 C 和 C++ 编程。它提供了许多强大的功能来提高开发效率和代码质量。以下是 CLion 的一些主要特点：</p>
+<h2 id="主要特点"><a class="headerlink" href="#主要特点"></a>主要特点</h2>
+<ul>
+<li><strong>智能代码补全</strong>：CLion 提供智能的代码补全功能，可以帮助开发者快速编写代码。</li>
+<li><strong>代码导航</strong>：支持快速跳转到定义、声明和用法，方便开发者在大型代码库中快速定位。</li>
+<li><strong>重构</strong>：提供多种重构工具，如重命名、提取函数等，帮助开发者重构代码。</li>
+<li><strong>调试</strong>：内置强大的调试器，支持断点、变量监视、内存查看等功能。</li>
+<li><strong>版本控制</strong>：集成了 Git、SVN 等版本控制系统，方便代码管理。</li>
+<li><strong>跨平台支持</strong>：支持 Windows、macOS 和 Linux 操作系统。</li>
+</ul>
+<p>CLion 还支持其他编程语言和工具，如 Python、JavaScript、CMake 等，适用于多种开发场景。</p>
+<h1 id="为什么要用-CLion-开发-STM32"><a class="headerlink" href="#为什么要用-CLion-开发-STM32"></a>为什么要用 CLion 开发 STM32</h1>
+<p>使用 CLion 开发 STM32 有以下几个优势：</p>
+<h2 id="主要优势"><a class="headerlink" href="#主要优势"></a>主要优势</h2>
+<ul>
+<li><strong>强大的编辑器</strong>：CLion 提供智能代码补全、代码导航和重构工具，极大提高了开发效率。</li>
+<li><strong>跨平台支持</strong>：CLion 支持 Windows、macOS 和 Linux 操作系统，方便在不同平台上进行开发。</li>
+<li><strong>内置调试器</strong>：CLion 内置强大的调试器，支持断点、变量监视和内存查看等功能，帮助快速定位和解决问题。</li>
+<li><strong>版本控制集成</strong>：CLion 集成了 Git、SVN 等版本控制系统，方便代码管理和协作开发。</li>
+<li><strong>CMake 支持</strong>：CLion 原生支持 CMake，方便配置和管理项目。</li>
+<li><strong>插件生态</strong>：CLion 拥有丰富的插件生态，可以扩展 IDE 的功能，满足不同开发需求。</li>
+</ul>
+<p>这些优势使得 CLion 成为开发 STM32 项目的理想选择。</p>
+<h1 id="版本说明"><a class="headerlink" href="#版本说明"></a>版本说明</h1>
+<p><strong>本教程基于</strong></p>
+<ol>
+<li>CLion 2024.1.5</li>
+<li>STM32CubeMX 6.12.0</li>
+<li>其他版本可能会有些许差异，但大体相同。</li>
+</ol>
+<h1 id="准备工作"><a class="headerlink" href="#准备工作"></a>准备工作</h1>
+<h3 id="安装-CLion"><a class="headerlink" href="#安装-CLion"></a>安装 CLion</h3>
+<ol>
+<li>访问 <a href="https://www.jetbrains.com/clion/">JetBrains 官网</a> 下载并安装 CLion。</li>
+<li>根据提示完成安装并激活 CLion。</li>
+</ol>
+<h3 id="安装-ARM-工具链"><a class="headerlink" href="#安装-ARM-工具链"></a>安装 ARM 工具链</h3>
+<ol>
+<li>下载并安装 <a href="https://developer.arm.com/downloads/-/gnu-rm">GNU Arm Embedded Toolchain</a>。</li>
+<li>在安装界面的最后，一定要勾选 <code>Add path to environment variable</code>，这样才能在命令行中使用 ARM 工具链。</li>
+<li>若要验证是否安装成功，可以在重启电脑命令行中输入 <code>arm-none-eabi-gcc --version</code>，如果显示版本信息，则表示安装成功。</li>
+<li>如果没有显示版本信息，可以重新安装并验证。</li>
+</ol>
+<h3 id="安装-OpenOCD"><a class="headerlink" href="#安装-OpenOCD"></a>安装 OpenOCD</h3>
+<ol>
+<li>下载并解压到一个位置 <a href="https://gnutoolchains.com/arm-eabi/openocd/">OpenOCD</a>。</li>
+<li>解压后进入文件夹，打开 <code>bin</code> 目录，复制此目录的路径。</li>
+<li>配置环境变量，将复制的目录添加到系统的 <code>PATH</code> 中。</li>
+<li>若要验证是否安装成功，可以在重启电脑后打开命令行输入 <code>openocd --version</code>，如果显示版本信息，则表示安装成功。</li>
+<li>如果没有显示版本信息，检查环境变量是否配置正确。</li>
+</ol>
+<h3 id="安装-STM32CubeMX"><a class="headerlink" href="#安装-STM32CubeMX"></a>安装 STM32CubeMX</h3>
+<ol>
+<li>访问 <a href="https://www.st.com/en/development-tools/stm32cubemx.html">STM32CubeMX 官网</a> 下载并安装 STM32CubeMX。</li>
+<li>根据提示完成安装并登录 STM32CubeMX。</li>
+<li>切记，一定要登录，否则无法下载资源，无法生成代码。</li>
+</ol>
+<h2 id="创建-STM32-项目"><a class="headerlink" href="#创建-STM32-项目"></a>创建 STM32 项目</h2>
+<h3 id="使用-STM32CubeMX-生成项目"><a class="headerlink" href="#使用-STM32CubeMX-生成项目"></a>使用 STM32CubeMX 生成项目</h3>
+<ol>
+<li>下载并安装 <a href="https://www.st.com/en/development-tools/stm32cubemx.html">STM32CubeMX</a>。</li>
+<li>打开 STM32CubeMX，选择你的 STM32 芯片型号，配置外设和引脚。</li>
+<li>在 <code>Project Manager</code> 选项卡中，选择 <code>Toolchain / IDE</code> 为 <code>CMake</code>，然后生成代码。</li>
+</ol>
+<h3 id="导入项目到-CLion"><a class="headerlink" href="#导入项目到-CLion"></a>导入项目到 CLion</h3>
+<ol>
+<li>打开 CLion，选择 <code>Open</code>，然后选择刚刚生成的项目文件夹。</li>
+<li>CLion 会自动检测并配置 CMake 项目。</li>
+<li>点击左上角的锤子按钮编译项目，无问题则说明导入成功。</li>
+<li><code>ninja: no work to do.</code> 并不是报错，而是此次编译与上次无变化，所以忽略编译。</li>
+</ol>
+<h3 id="配置-OpenOCD"><a class="headerlink" href="#配置-OpenOCD"></a>配置 OpenOCD</h3>
+<ol>
+<li>点击锤子按钮旁边的选项卡，选择 <code>Edit Configurations</code>。</li>
+<li>点击 <code>+</code>，选择 <code>OpenOCD Download &amp; Run</code>。</li>
+<li>点击 <code>Executable binary</code> 的选项卡，选择唯一的一个。</li>
+<li>之后配置 <code>Board configuration file</code> 为你的芯片型号和对应的下载器的配置文件。</li>
+<li>保存配置将配置切换到刚刚添加的配置（点击锤子按钮旁边的选项卡切换）。</li>
+<li>点击锤子按钮旁边的三角形按钮开始下载程序（下载前会自动编译）。</li>
+<li>如果下载失败，检查 <code>Board configuration file</code> 是否正确，检查下载器是否连接正确。</li>
+</ol>
+<h1 id="附言"><a class="headerlink" href="#附言"></a>附言</h1>
+<ul>
+<li>CLino虽然收费，但是Jetbrains家对个人开发者很友好。</li>
+<li>如果是学生或者教职员工，可以申请免费许可证<a href="https://www.jetbrains.com/zh-cn/community/education/#students">具体可点此查看</a></li>
+<li>同时，如果你是个开源项目开发者，也可以申请免费许可证<a href="https://www.jetbrains.com/shop/eform/opensource">具体可点此查看</a></li>
+</ul>
+<h1 id="结语"><a class="headerlink" href="#结语"></a>结语</h1>
+<p>通过本教程，你已经学会了如何使用 CLion 开发 STM32 项目。CLion 提供了强大的编辑和调试功能，可以极大提高开发效率和代码质量。希望本教程能帮助你更好地掌握 CLion 和 STM32 的开发技巧，顺利完成你的项目。</p>
+]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>教程</tag>
+        <tag>嵌入式开发</tag>
+        <tag>STM32</tag>
+        <tag>CLion</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>HyperOS-关闭USB安装提示.md</title>
     <url>/posts/45877/</url>
     <content><![CDATA[<div class="note primary no-icon flat"><p>此教程适合后期HyperOS，早期HyperOS和MIUI的关闭USB安装提示请参考<a href="/posts/12063/">此教程</a></p>

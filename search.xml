@@ -171,7 +171,8 @@
 <li>同时本教程需要一定的基础，如有不懂请自行学习。</li>
 </ul>
 <h1 id="CLion-简介"><a class="headerlink" href="#CLion-简介"></a>CLion 简介</h1>
-<p>CLion 是 JetBrains 开发的一款跨平台集成开发环境 (IDE)，专门用于 C 和 C++ 编程。它提供了许多强大的功能来提高开发效率和代码质量。以下是 CLion 的一些主要特点：</p>
+<p>CLion 是 JetBrains 开发的一款跨平台集成开发环境 (IDE)，专门用于 C 和 C++ 编程。它提供了许多强大的功能来提高开发效率和代码质量。以下是<br>
+CLion 的一些主要特点：</p>
 <h2 id="主要特点"><a class="headerlink" href="#主要特点"></a>主要特点</h2>
 <ul>
 <li><strong>智能代码补全</strong>：CLion 提供智能的代码补全功能，可以帮助开发者快速编写代码。</li>
@@ -210,7 +211,8 @@
 <h3 id="安装-ARM-工具链"><a class="headerlink" href="#安装-ARM-工具链"></a>安装 ARM 工具链</h3>
 <ol>
 <li>下载并安装 <a href="https://developer.arm.com/downloads/-/gnu-rm">GNU Arm Embedded Toolchain</a>。</li>
-<li>在安装界面的最后，一定要勾选 <code>Add path to environment variable</code>，这样才能在命令行中使用 ARM 工具链。</li>
+<li>在安装界面的最后，一定要勾选 <code>Add path to environment variable</code>，这样才能在命令行中使用 ARM<br>
+工具链。<img src="/image/11477_1.png" alt=""></li>
 <li>若要验证是否安装成功，可以在重启电脑命令行中输入 <code>arm-none-eabi-gcc --version</code>，如果显示版本信息，则表示安装成功。</li>
 <li>如果没有显示版本信息，可以重新安装并验证。</li>
 </ol>
@@ -233,33 +235,40 @@
 <ol>
 <li>下载并安装 <a href="https://www.st.com/en/development-tools/stm32cubemx.html">STM32CubeMX</a>。</li>
 <li>打开 STM32CubeMX，选择你的 STM32 芯片型号，配置外设和引脚。</li>
-<li>在 <code>Project Manager</code> 选项卡中，选择 <code>Toolchain / IDE</code> 为 <code>CMake</code>，然后生成代码。</li>
+<li>在 <code>Project Manager</code> 选项卡中，选择 <code>Toolchain / IDE</code> 为 <code>CMake</code><img src="/image/11477_7.png" alt=""></li>
+<li><code>Project name</code> 为项目名，<code>Project location</code> 为项目保存位置，其余按需求更改。</li>
+<li>点击右上角 <code>Generate Code</code> 生成代码，第一次生成代码需要下载文件，等待生成完成即可。</li>
+<li>如果无法下载文件，检查网络是否正常，或者上魔法，其次检查是否登录。</li>
 </ol>
 <h3 id="导入项目到-CLion"><a class="headerlink" href="#导入项目到-CLion"></a>导入项目到 CLion</h3>
 <ol>
 <li>打开 CLion，选择 <code>Open</code>，然后选择刚刚生成的项目文件夹。</li>
-<li>CLion 会自动检测并配置 CMake 项目。</li>
-<li>点击左上角的锤子按钮编译项目，无问题则说明导入成功。</li>
+<li>CLion 会自动检测并配置 CMake 项目，弹出几个窗口，一路<code>Next</code>即可，无需更改。</li>
+<li>等待加载后点击左上角的锤子按钮编译项目，弹出窗口显示<code>Build finished</code><br>
+则说明导入成功。<img src="/image/11477_0.png" alt="11477_0.png"><img src="/image/11477.png" alt="11477_0.png"></li>
 <li><code>ninja: no work to do.</code> 并不是报错，而是此次编译与上次无变化，所以忽略编译。</li>
 </ol>
 <h3 id="配置-OpenOCD"><a class="headerlink" href="#配置-OpenOCD"></a>配置 OpenOCD</h3>
 <ol>
-<li>点击锤子按钮旁边的选项卡，选择 <code>Edit Configurations</code>。</li>
-<li>点击 <code>+</code>，选择 <code>OpenOCD Download &amp; Run</code>。</li>
-<li>点击 <code>Executable binary</code> 的选项卡，选择唯一的一个。</li>
-<li>之后配置 <code>Board configuration file</code> 为你的芯片型号和对应的下载器的配置文件。</li>
-<li>保存配置将配置切换到刚刚添加的配置（点击锤子按钮旁边的选项卡切换）。</li>
+<li>点击锤子按钮旁边的选项卡，选择 <code>Edit Configurations</code>。<img src="/image/11477_2.png" alt=""></li>
+<li>点击 <code>+</code>，选择 <code>OpenOCD Download &amp; Run</code>。<img src="/image/11477_3.png" alt=""></li>
+<li>点击 <code>Executable binary</code> 的选项卡，选择唯一的一个。<img src="/image/11477_4.png" alt=""></li>
+<li>之后配置 <code>Board configuration file</code> 为你的芯片型号和对应的下载器的配置文件（这应该是本教程难度最大的一步，展开说太广了，所以点到为止）。</li>
+<li>保存配置将配置切换到刚刚添加的配置（点击锤子按钮旁边的选项卡切换）。<img src="/image/11477_5.png" alt=""><img src="/image/11477_6.png" alt=""></li>
 <li>点击锤子按钮旁边的三角形按钮开始下载程序（下载前会自动编译）。</li>
+<li>每一种<code>Board configuration file</code>配置文件不一样，得到的下载输出提示不同，所以不截图展示。</li>
 <li>如果下载失败，检查 <code>Board configuration file</code> 是否正确，检查下载器是否连接正确。</li>
 </ol>
 <h1 id="附言"><a class="headerlink" href="#附言"></a>附言</h1>
 <ul>
 <li>CLino虽然收费，但是Jetbrains家对个人开发者很友好。</li>
-<li>如果是学生或者教职员工，可以申请免费许可证<a href="https://www.jetbrains.com/zh-cn/community/education/#students">具体可点此查看</a></li>
-<li>同时，如果你是个开源项目开发者，也可以申请免费许可证<a href="https://www.jetbrains.com/shop/eform/opensource">具体可点此查看</a></li>
+<li>如果是学生或者教职员工，可以申请免费许可证 <a href="https://www.jetbrains.com/zh-cn/community/education/#students">具体可点此查看</a></li>
+<li>同时，如果你是个开源项目开发者，也可以申请免费许可证 <a href="https://www.jetbrains.com/shop/eform/opensource">具体可点此查看</a></li>
+<li>本人就是使用的开源项目申请的免费许可证。</li>
 </ul>
 <h1 id="结语"><a class="headerlink" href="#结语"></a>结语</h1>
-<p>通过本教程，你已经学会了如何使用 CLion 开发 STM32 项目。CLion 提供了强大的编辑和调试功能，可以极大提高开发效率和代码质量。希望本教程能帮助你更好地掌握 CLion 和 STM32 的开发技巧，顺利完成你的项目。</p>
+<p>通过本教程，你已经学会了如何使用 CLion 开发 STM32 项目。CLion 提供了强大的编辑和调试功能，可以极大提高开发效率和代码质量。希望本教程能帮助你更好地掌握<br>
+CLion 和 STM32 的开发技巧，顺利完成你的项目。</p>
 ]]></content>
       <categories>
         <category>教程</category>

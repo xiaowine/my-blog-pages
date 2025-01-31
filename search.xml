@@ -119,10 +119,10 @@
 <li><code>6.x之前</code>的版本所有Hook点都是固定的，也就是说，不同系统，不同Android版本可能都需要单独适配，特别是国内定制化系统</li>
 <li><code>6.x之后</code>寻找所有TextView（也就是显示文字的控件），再判断它的文字是否为当前时间，如果是，则有可能为状态栏的时间控件，记录下来，之后让用户选择一个能正常显示的，因为机器已经判断不出来了</li>
 <li>
-<mark class="hl-label green">优点</mark> ：适配99.9%的系统，并且适配部分官改
+<mark class="hl-label green">优点</mark>：适配99.9%的系统，并且适配部分官改
 </li>
 <li>
-<mark class="hl-label red">缺点</mark> ：部分系统会出现玄学问题，比如在浅色与深色模式切换后失效，导致无法显示，这个问题目前还没有解决方案
+<mark class="hl-label red">缺点</mark>：部分系统会出现玄学问题，比如在浅色与深色模式切换后失效，导致无法显示，这个问题目前还没有解决方案
 </li>
 </ul>
 <h3 id="性能提升"><a class="headerlink" href="#性能提升"></a>性能提升</h3>
@@ -160,32 +160,6 @@
       <tags>
         <tag>存储</tag>
         <tag>Alist</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>HyperOS-关闭USB安装提示.md</title>
-    <url>/posts/45877/</url>
-    <content><![CDATA[<div class="note primary no-icon flat"><p>此教程适合后期HyperOS，早期HyperOS和MIUI的关闭USB安装提示请参考<a href="/posts/12063/">此教程</a></p>
-</div>
-<hr>
-<h3 id="关闭步骤"><a class="headerlink" href="#关闭步骤"></a>关闭步骤</h3>
-<ul>
-<li>以1.0.21.1.22DEV为例</li>
-<li>打开设置</li>
-<li>进入<code>开发者选项</code>(未开启的话，先打开开发者选项。此类教程网上很多，不再赘述)</li>
-<li>往下划一点，找到<code>USB安装管理</code>，进入他</li>
-<li>进入<code>USB安装管理</code>，会发现右上角有个图标</li>
-<li>点击图标，关闭<code>USB安装管理</code>即可</li>
-</ul>
-]]></content>
-      <categories>
-        <category>教程</category>
-      </categories>
-      <tags>
-        <tag>Android</tag>
-        <tag>搞机</tag>
-        <tag>HyperOS</tag>
-        <tag>破解</tag>
       </tags>
   </entry>
   <entry>
@@ -310,6 +284,32 @@ CLion 和 STM32 的开发技巧，顺利完成你的项目。</p>
         <tag>嵌入式开发</tag>
         <tag>STM32</tag>
         <tag>CLion</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>HyperOS-关闭USB安装提示.md</title>
+    <url>/posts/45877/</url>
+    <content><![CDATA[<div class="note primary no-icon flat"><p>此教程适合后期HyperOS，早期HyperOS和MIUI的关闭USB安装提示请参考<a href="/posts/12063/">此教程</a></p>
+</div>
+<hr>
+<h3 id="关闭步骤"><a class="headerlink" href="#关闭步骤"></a>关闭步骤</h3>
+<ul>
+<li>以1.0.21.1.22DEV为例</li>
+<li>打开设置</li>
+<li>进入<code>开发者选项</code>(未开启的话，先打开开发者选项。此类教程网上很多，不再赘述)</li>
+<li>往下划一点，找到<code>USB安装管理</code>，进入他</li>
+<li>进入<code>USB安装管理</code>，会发现右上角有个图标</li>
+<li>点击图标，关闭<code>USB安装管理</code>即可</li>
+</ul>
+]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>Android</tag>
+        <tag>搞机</tag>
+        <tag>HyperOS</tag>
+        <tag>破解</tag>
       </tags>
   </entry>
   <entry>

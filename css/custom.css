@@ -56,11 +56,7 @@ div#archive {
     background-size: 100%;
 }
 
-[data-theme="light"] #aside-content > .card-widget.card-info {
-    background-image: url(https://sourcebucket.s3.bitiful.net/img/aurora.webp);
-}
-
-[data-theme="dark"] #aside-content > .card-widget.card-info {
+#aside-content > .card-widget.card-info {
     background-image: url(https://sourcebucket.s3.bitiful.net/img/aurora.webp);
 }
 
@@ -116,4 +112,7 @@ div#archive {
 @font-face {
     font-family: 'ZhuZiAWan2';
     src: url('https://sourcebucket.s3.bitiful.net/fonts/ZhuZiAWan2.woff2');
+}
+#footer {
+    background-color: rgba(0,0,0,0)!important;
 }

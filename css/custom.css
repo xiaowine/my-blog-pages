@@ -55,7 +55,7 @@ div#archive {
 }
 
 #aside-content > .card-widget.card-info {
-  background-image: url(https://sourcebucket.s3.bitiful.net/img/aurora.webp);
+  background-image: url(/image/aurora.webp);
 }
 
 /**/

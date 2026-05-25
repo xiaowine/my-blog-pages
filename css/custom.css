@@ -121,12 +121,14 @@ div#archive {
   text-overflow: ellipsis;
 }
 
-#nav .menus_items {
-  position: absolute !important;
-  width: fit-content !important;
-  left: 50% !important;
-  top: 50%;
-  transform: translate(-50%, -50%) !important;
+@media screen and (min-width: 901px) {
+  #nav .menus_items {
+    position: absolute !important;
+    width: fit-content !important;
+    left: 50% !important;
+    top: 50%;
+    transform: translate(-50%, -50%) !important;
+  }
 }
 
 #nav .menus_items .menus_item .menus_item_child {
@@ -141,11 +143,15 @@ div#archive {
 
 @media screen and (max-width: 900px) {
   #nav #blog-info {
-    max-width: calc(100% - 220px);
+    max-width: calc(100% - 72px);
+  }
+
+  #nav.hide-menu #menus {
+    margin-left: auto;
   }
 
   #nav .nav-page-title {
-    max-width: min(28vw, 220px);
+    max-width: calc(100vw - 120px);
   }
 }
 
@@ -153,6 +159,12 @@ div#archive {
   font-family: "ZhuZiAWan2";
   src: url("https://sourcebucket.s3.bitiful.net/fonts/ZhuZiAWan2.woff2");
 }
+
+#sidebar #sidebar-menus {
+  overflow-y: auto !important;
+  padding-left: 0 !important;
+}
+
 #footer {
   background-color: rgba(0, 0, 0, 0) !important;
 }
